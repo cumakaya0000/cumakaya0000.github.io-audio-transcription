@@ -150,31 +150,58 @@ GitHub sayfasında:
 </p>
 
 <hr style="border:1px solid #2a2a2a">
-
 <h2 style="color:#cfcfcf;">▶️ Çalıştırma</h2>
 
 <p>
-Öncelikle komut satırı açılır.
-(Windows’ta Başlat menüsünden “PowerShell” yazmanız yeterlidir.)
+Öncelikle komut satırını açın. (Windows’ta Başlat menüsünden “PowerShell” yazmanız yeterlidir.)
 </p>
 
 <p>
-Ardından <b>transkript.py</b> 1-dosyasının bulunduğu klasöre gidilir.
-2-transkript.py dosyasına fare yardımı ile sag tık yapıp Yol olarak kopyala yapılabilir.
+Ardından <b>transkript.py</b> dosyasının bulunduğu klasöre gidin.
 </p>
 
 <p>
-Örnek: dosya Masaüstündeyse</p>
+Örnek: dosya Masaüstündeyse
+</p>
 
 <pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
 cd $env:USERPROFILE\Desktop
 </pre>
 
+<h3 style="color:#cfcfcf;">1. Videoyu WAV formatına dönüştürmek</h3>
+
+<p>
+Elinizde bir video dosyası varsa (örnek: video.mp4), sesi çıkartıp WAV formatına dönüştürün:
+</p>
+
 <pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
-ffmpeg -i input.mp3 output.wav
+ffmpeg -i video.mp4 ses.wav
 </pre>
 
+<p>
+- <b>-i video.mp4</b> → giriş video dosyası  
+- <b>ses.wav</b> → çıkış ses dosyası (transkript için)
+</p>
 
+<h3 style="color:#cfcfcf;">2. Transkript.py’de ses dosyasını belirlemek</h3>
+
+<p>
+Programın hangi ses dosyasını okuyacağını <b>transkript.py</b> dosyasında şu satırdan ayarlayın:
+</p>
+
+<pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
+dosya_yolu = r"D:\videolar\ders1.wav"
+</pre>
+
+<p>
+Kendi dosya yolunuzu buraya yazın ve dosyayı kaydedin.
+</p>
+
+<h3 style="color:#cfcfcf;">3. Programı çalıştırmak</h3>
+
+<p>
+PowerShell veya komut istemcisinde şu komutu çalıştırın:
+</p>
 
 <pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
 python transkript.py
@@ -191,48 +218,17 @@ Program çalışırken:
 </ul>
 
 <p>
-Uzun videolarda bu işlem birkaç dakika sürebilir.
-</p>
-
-<p>
-İşlem tamamlandığında ekranda şu mesaj görülür:
+Uzun videolarda bu işlem birkaç dakika sürebilir. İşlem tamamlandığında ekranda şu mesaj görülür:
 </p>
 
 <pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
 Bitti. cikti.txt oluşturuldu.
 </pre>
 
-<h3 style="color:#cfcfcf;">!! Seçilen video dosyasını değiştirme</h3>
+<h3 style="color:#cfcfcf;">4. Programı tekrar çalıştırmak</h3>
 
 <p>
-Programın hangi ses dosyasını okuyacağı
-<b>transkript.py</b> dosyası içindeki şu satırdan belirlenir:
-</p>
-
-<pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
-r"C:\Users\...\ses.wav"
-</pre>
-
-<p>
-Kendi dosya yolunuzu buraya yazmanız yeterlidir.
-</p>
-
-<p>
-Örnek:
-</p>
-
-<pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
-r"D:\videolar\ders1.wav"
-</pre>
-
-<p>
-Dosyayı kaydettikten sonra program tekrar çalıştırılır.
-</p>
-
-<h3 style="color:#cfcfcf;">Programı tekrar çalıştırmak</h3>
-
-<p>
-Her yeni dosya için sadece şu iki komutu tekrar çalıştırmanız yeterlidir:
+Her yeni dosya için sadece şu iki komutu tekrar edin:
 </p>
 
 <pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
@@ -241,19 +237,13 @@ python transkript.py
 </pre>
 
 <p>
-Programı çalışırken durdurmak için:
+Programı çalışırken durdurmak için <b>Ctrl + C</b> tuşlarına basabilirsiniz.
 </p>
 
-<pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
-Ctrl + C
-</pre>
-
-<hr style="border:1px solid #2a2a2a">
-
-<h2 style="color:#cfcfcf;">📄 Çıktı</h2>
+<h3 style="color:#cfcfcf;">5. Çıktı</h3>
 
 <p>
-Program çalıştırıldığı klasöre otomatik olarak şu dosyayı üretir:
+Program çalıştırıldığı klasöre otomatik olarak <b>cikti.txt</b> dosyasını üretir.
 </p>
 
 <pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
@@ -267,11 +257,7 @@ cikti.txt
 </pre>
 
 <p>
-Köşeli parantez içindeki değerler:
-konuşmanın videodaki başlangıç ve bitiş saniyeleridir.
-</p>
-
-<p>
+Köşeli parantez içindeki değerler, konuşmanın videodaki başlangıç ve bitiş saniyeleridir.
 Bu sayede video üzerinde ilgili bölüme çok hızlı şekilde geri dönülebilir.
 </p>
 
