@@ -157,7 +157,7 @@ GitHub sayfasında:
 </p>
 
 <p>
-Ardından <b>transkript.py</b> dosyasının bulunduğu klasöre gidin.
+Ardından <b>transkript.py</b> dosyasının bulunduğu klasöre gidin.Veya transkript.py sag tık ile yol olarak kopyala yapın.
 </p>
 
 <p>
