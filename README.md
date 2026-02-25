@@ -159,7 +159,8 @@ GitHub sayfasında:
 </p>
 
 <p>
-Ardından <b>transkript.py</b> dosyasının bulunduğu klasöre gidilir.
+Ardından <b>transkript.py</b> 1-dosyasının bulunduğu klasöre gidilir.
+2-transkript.py dosyasına fare yardımı ile sag tık yapıp Yol olarak kopyala yapılabilir.
 </p>
 
 <p>
@@ -173,9 +174,7 @@ cd $env:USERPROFILE\Desktop
 ffmpeg -i input.mp3 output.wav
 </pre>
 
-<p>
-wav
-</p>
+
 
 <pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
 python transkript.py
