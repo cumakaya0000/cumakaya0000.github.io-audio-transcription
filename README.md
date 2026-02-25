@@ -169,6 +169,14 @@ Ardından <b>transkript.py</b> dosyasının bulunduğu klasöre gidilir.
 cd $env:USERPROFILE\Desktop
 </pre>
 
+<pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
+ffmpeg -i input.mp3 output.wav
+</pre>
+
+<pre style="background:#151518;padding:12px;border-radius:8px;color:#e6e6e6">
+ffmpeg -i input.mp3 output.wav
+</pre>
+
 <p>
 Programı başlatmak için:
 </p>
